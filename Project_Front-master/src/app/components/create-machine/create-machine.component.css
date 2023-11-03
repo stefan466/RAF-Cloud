@@ -1,0 +1,36 @@
+.back-button-container {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .btn-outline-info {
+    border-color: #17a2b8;
+    color: #17a2b8;
+  }
+  
+  .btn-outline-info:hover {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .create-machine-form {
+    margin-top: 20px;
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }

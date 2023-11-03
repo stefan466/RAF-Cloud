@@ -1,0 +1,58 @@
+<div>
+    <button [routerLink]="['/']" type="button" class="btn btn-outline-warning" (click)="logOut()">Log out</button>
+    &nbsp;
+    <button [routerLink]="['/all']" type="button" class="btn btn-outline-info">Go to users</button>
+    -
+    <button *ngIf="hasPermission('can_search_machines')" [routerLink]="['/errors']" type="button" class="btn btn-outline-info">Go to errors</button>
+    &nbsp;
+    <button *ngIf="hasPermission('can_create_machines')" [routerLink]="['/create-machine']" type="button" class="btn btn-outline-primary">Create machine</button>
+    <hr>
+  </div>
+  
+  <div *ngIf="hasPermission('can_search_machines')">
+    <label>Machine status:</label>
+    <div class="form-check">
+      <input [(ngModel)]="runningStatus" class="form-check-input" type="checkbox" value="RUNNING" id="defaultCheck1">
+      <label class="form-check-label" for="defaultCheck1">RUNNING</label>
+    </div>
+    <div class="form-check">
+      <input [(ngModel)]="stoppedStatus" class="form-check-input" type="checkbox" value="STOPPED" id="defaultCheck2">
+      <label class="form-check-label" for="defaultCheck2">STOPPED</label>
+    </div>
+    <br>
+    <form [formGroup]="searchForm" (submit)="search()" class="mb-5">
+      <div class="form-group mb-2">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter the machine's name" [(ngModel)]="machineSearchParameters.name" [formControlName]="'name'">
+        <label for="dateFrom">Date from:</label>
+        <input type="date" class="form-control" id="dateFrom" name="dateFrom" placeholder="Pick date from" [(ngModel)]="machineSearchParameters.dateFrom" [formControlName]="'dateFrom'">
+        <label for="dateTo">Date to:</label>
+        <input type="date" class="form-control" id="dateTo" name="dateTo" placeholder="Pick date to" [(ngModel)]="machineSearchParameters.dateTo" [formControlName]="'dateTo'">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+      <hr>
+    </form>
+  </div>
+  
+  <div *ngFor="let machine of machineList; let i = index;" class="mb-2">
+    <h4 class="text-decoration-underline">{{ i + 1 }}. {{ machine.name + " - "}}{{ machine.status }}</h4>
+    <label><b>Date:</b> {{machine.creationDate}}</label>
+    <br>
+    <div>
+      <label><b>Actions:</b></label> &nbsp;
+      <button *ngIf="hasPermission('can_start_machines')" class="btn btn-outline-info" (click)="startMachine(machine.id)">Start</button>
+
+      <button *ngIf="hasPermission('can_stop_machines')" class="btn btn-outline-info" (click)="stopMachine(machine.id)">Stop</button>
+
+      <button *ngIf="hasPermission('can_restart_machines')" class="btn btn-outline-warning" (click)="restartMachine(machine.id)">Restart</button>
+      
+      <button *ngIf="hasPermission('can_schedule_machines')" [routerLink]="'/schedule/' + machine.id" class="btn btn-outline-info">Schedule</button>
+
+      <button *ngIf="hasPermission('can_destroy_machines')" class="btn btn-outline-danger" (click)="destroyMachine(machine.id)">Destroy</button>
+      
+
+    </div>
+
+    <hr>
+  </div>
+  

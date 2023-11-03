@@ -1,0 +1,14 @@
+<div>
+  <button [routerLink]="['/machines']" type="button" class="btn btn-outline-info">Back</button>
+</div>
+<div>
+  <br>
+  <form [formGroup]="createMachineForm" (submit)="createMachine()" class="mb-5">
+    <div class="form-group mb-3">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter the machine's name"
+             [(ngModel)]="createRequest.name" [formControlName]="'name'">
+    </div>
+    <button type="submit" class="btn btn-primary">Create Machine</button>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+.back-button-container {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .btn-outline-info {
+    border-color: #17a2b8;
+    color: #17a2b8;
+  }
+  
+  .btn-outline-info:hover {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .error-message-list {
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+  
+  .error-message h4 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .error-details {
+    margin-top: 10px;
+  }
+  
+  .error-details h6 {
+    margin: 0;
+    font-weight: normal;
+  }
+  

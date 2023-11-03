@@ -1,0 +1,16 @@
+<div>
+    <button [routerLink]="['/machines']" type="button" class="btn btn-outline-info">Back</button>
+  </div>
+  <br>
+  <h3>ErrorMessage list for user: {{userMail}}</h3>
+  <div *ngFor="let errorMessage of errorMessageList; let i = index;" class="mb-2">
+    <h4 class="">{{ i + 1 }}. {{ errorMessage.message }}</h4>
+    <div class="mb-2">
+      <h6><b>Date:</b> {{errorMessage.date}}</h6>
+      <h6><b>Action:</b> {{errorMessage.action}}</h6>
+      <h6><b>Machine:</b> {{errorMessage.machine.id}}</h6>
+  
+    </div>
+    <hr>
+  </div>
+  

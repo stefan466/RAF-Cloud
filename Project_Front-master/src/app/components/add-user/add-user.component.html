@@ -1,0 +1,74 @@
+<div>
+    <button [routerLink]="['/all']" type="button" class="btn btn-outline-info">Back</button>
+  </div>
+  <br>
+  <div>
+    <h3><b>User update page</b></h3>
+    <div>
+      <label>Authorization roles:</label>
+      <div class="form-check">
+        <input [(ngModel)]="readRole" class="form-check-input" type="checkbox" value="CAN_READ_USERS" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">READ</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="createRole" class="form-check-input" type="checkbox" value="CAN_CREATE_USERS" id="defaultCheck2">
+        <label class="form-check-label" for="defaultCheck2">CREATE</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="updateRole" class="form-check-input" type="checkbox" value="CAN_UPDATE_USERS" id="defaultCheck3">
+        <label class="form-check-label" for="defaultCheck3">UPDATE</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="deleteRole" class="form-check-input" type="checkbox" value="CAN_DELETE_USERS" id="defaultCheck4">
+        <label class="form-check-label" for="defaultCheck4">DELETE</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="searchRole" class="form-check-input" type="checkbox" value="CAN_SEARCH_MACHINES" id="defaultCheck5">
+        <label class="form-check-label" for="defaultCheck5">SEARCH</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="startRole" class="form-check-input" type="checkbox" value="CAN_START_MACHINES" id="defaultCheck6">
+        <label class="form-check-label" for="defaultCheck6">START</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="stopRole" class="form-check-input" type="checkbox" value="CAN_STOP_MACHINES" id="defaultCheck7">
+        <label class="form-check-label" for="defaultCheck7">STOP</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="restartRole" class="form-check-input" type="checkbox" value="CAN_RESTART_MACHINES" id="defaultCheck8">
+        <label class="form-check-label" for="defaultCheck8">RESTART</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="createMachineRole" class="form-check-input" type="checkbox" value="CAN_CREATE_MACHINES" id="defaultCheck9">
+        <label class="form-check-label" for="defaultCheck9">CREATE_MACHINE</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="destroyRole" class="form-check-input" type="checkbox" value="CAN_DESTROY_MACHINES" id="defaultCheck10">
+        <label class="form-check-label" for="defaultCheck10">DESTROY</label>
+      </div>
+      <div class="form-check">
+        <input [(ngModel)]="scheduleRole" class="form-check-input" type="checkbox" value="CAN_SCHEDULE_MACHINES" id="defaultCheck11">
+        <label class="form-check-label" for="defaultCheck11">SCHEDULE</label>
+      </div>
+  
+      <br>
+      <form [formGroup]="updateForm" (submit)="addUser()" class="mb-5">
+        <div class="form-group mb-2">
+          <label for="name">Name:</label>
+          <input [(ngModel)]="userInfo.name" type="text" class="form-control" id="name" name="name" placeholder="Enter the user's name" [formControlName]="'name'">
+  
+          <label for="lastName">Lastname:</label>
+          <input [(ngModel)]="userInfo.lastName" type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter the user's lastname" [formControlName]="'lastName'">
+  
+          <label for="email">Email address:</label>
+          <input [(ngModel)]="userInfo.mail" type="email" class="form-control" id="email" name="mail" placeholder="Enter the user's email address" [formControlName]="'mail'">
+  
+          <label for="email">Password:</label>
+          <input [(ngModel)]="userInfo.password" type="password" class="form-control" id="pass" name="pass" placeholder="Enter the password" [formControlName]="'pass'">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-primary">Add user</button>
+      </form>
+    </div>
+  </div>
+  

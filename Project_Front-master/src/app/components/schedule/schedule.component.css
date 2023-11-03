@@ -1,0 +1,37 @@
+.back-button {
+    margin-bottom: 10px;
+  }
+  
+  .form {
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border-radius: 0;
+    border: 1px solid #d1d1d1;
+    box-shadow: none;
+  }
+  
+  #radioButtons label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  

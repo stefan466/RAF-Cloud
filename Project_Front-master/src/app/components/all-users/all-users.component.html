@@ -1,0 +1,35 @@
+<div>
+    <button [routerLink]="['/']" type="button" class="btn btn-outline-warning" (click)="logOut()">
+      Log out
+    </button>
+    &nbsp;
+    <button *ngIf="getPermission('can_search_machines')" [routerLink]="['/machines']" type="button" class="btn btn-outline-info">
+      Go to machines
+    </button>
+    &nbsp;
+    <button *ngIf="getPermission('can_create_users')" [routerLink]="['/add']" type="button" class="btn btn-outline-primary me-2">
+      Create a new user
+    </button>
+    <hr>
+  </div>
+  <div>
+    <div *ngFor="let user of userList; let i = index;" class="mb-2 user-item">
+      <h4 class="text-decoration-underline">{{ i + 1 }}. <a>{{ user.name + ' ' }}{{ user.lastName }}</a></h4>
+      <label><b>Email address:</b></label>
+      <p *ngIf="canUpdate; else emailNotClickable">
+        <a [routerLink]="'/edit/' + user.id">{{ user.mail }}</a>
+      </p>
+      <ng-template #emailNotClickable>
+        <p>{{ user.mail }}</p>
+      </ng-template>
+      <label><b>User authorization roles:</b></label>
+      <div *ngFor="let role of user.roles; let i = index;" class="mb-1">
+        <h6 class="text-muted">-{{ role.name }}</h6>
+      </div>
+      <button *ngIf="getPermission('can_delete_users')" id="deleteBtn" type="button" class="btn btn-outline-danger"
+              (click)="deleteUser(user.id)">Delete user</button>
+      <hr>
+    </div>
+   
+  </div>
+  

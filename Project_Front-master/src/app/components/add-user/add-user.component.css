@@ -1,0 +1,60 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+ 
+  .form-container {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+ 
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+
+  .form-check-input {
+    margin-right: 10px;
+  }
+  
+
+  .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Stil za input polja */
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  /* Stil za greške u unosu */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Stil za uspešnu poruku */
+  .success-message {
+    color: green;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+  }
+  

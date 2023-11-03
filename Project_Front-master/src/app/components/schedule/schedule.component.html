@@ -1,0 +1,30 @@
+<div>
+    <button [routerLink]="['/machines']" type="button" class="btn btn-outline-info">Back</button>
+  </div>
+  <br>
+  <div>
+    <form [formGroup]="scheduleForm" (submit)="schedule()" class="mb-5">
+      <div class="form-group mb-2">
+        <label for="date">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" placeholder="Enter a date when to execute"
+               [(ngModel)]="scheduleParameters.date" [formControlName]="'date'">
+        <label for="time">Time:</label>
+        <input type="time" step="1" class="form-control" id="time" name="time" placeholder="Pick a time when to execute"
+               [(ngModel)]="scheduleParameters.time" [formControlName]="'time'">
+        <br>
+        <label for="radioButtons" class="me-2">Actions:</label>
+        <br>
+        <mat-radio-group [(ngModel)]="scheduleParameters.action" [formControlName]="'action'" id="radioButtons" aria-label="Select an option">
+          <mat-radio-button value="Start">Start</mat-radio-button>
+          <br>
+          <mat-radio-button value="Stop">Stop</mat-radio-button>
+          <br>
+          <mat-radio-button value="Restart">Restart</mat-radio-button>
+        </mat-radio-group>
+      
+  
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Schedule</button>
+    </form>
+  </div>
+  

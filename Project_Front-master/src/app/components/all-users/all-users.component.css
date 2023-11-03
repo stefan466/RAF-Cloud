@@ -1,0 +1,79 @@
+.button-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .btn-outline-warning {
+    border-color: #ffc107;
+    color: #ffc107;
+  }
+  
+  .btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .btn-outline-info {
+    border-color: #17a2b8;
+    color: #17a2b8;
+  }
+  
+  .btn-outline-info:hover {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .subtitle {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .text-decoration-underline {
+    text-decoration: underline;
+  }
+  
+  /* Stil za rezultate pretrage */
+  .user-result {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-info {
+    font-size: 14px;
+  }
+  
+  .action-icon {
+    margin-right: 5px;
+  }
+  
+
+.user-item a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.user-item p {
+  color: gray;
+}
